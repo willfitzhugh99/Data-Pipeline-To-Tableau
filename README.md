@@ -5,5 +5,5 @@ This project presents a match up preview for upcoming soccer games in Europe's t
 
 All together, this creates a customizable way to view information on upcoming soccer games.
 
-Here is the link to the Tableau dashboard (it can be downloaded):
+Here is the link to the Tableau dashboard:
 https://public.tableau.com/app/profile/william.fitzhugh/viz/EuropeanSoccerMatchPreview/Dashboard5
