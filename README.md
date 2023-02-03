@@ -8,4 +8,4 @@ All together, this creates a customizable way to view information on upcoming so
 Here is the link to the Tableau dashboard:
 https://public.tableau.com/app/profile/william.fitzhugh/viz/EuropeanSoccerMatchPreview/Dashboard5
 
-soon to come: an explanation for all this
+soon to come: explanations things like, the .py version of the Update Current Season script is there so you can run the script from your terminal using an task automator and keep the data source maintained automatically.
