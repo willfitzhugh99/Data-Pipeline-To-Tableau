@@ -7,3 +7,5 @@ All together, this creates a customizable way to view information on upcoming so
 
 Here is the link to the Tableau dashboard:
 https://public.tableau.com/app/profile/william.fitzhugh/viz/EuropeanSoccerMatchPreview/Dashboard5
+
+soon to come: an explanation for all this
