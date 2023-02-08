@@ -1,5 +1,6 @@
 .RHistory
 .DS_Store
-.ipynb_checkpoints/
+.ipynb_checkpoints
+**/*.ipynb_checkpoints/
 Tableau_Workbooks/
 pygsheets_api_authorization_file.json
