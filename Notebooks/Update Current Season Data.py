@@ -12,24 +12,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pygsheets
 
+from ipynb.fs.full.xscores_selenium_functions import scrape_xscores_completed
+from ipynb.fs.full.xscores_selenium_functions import scrape_xscores_upcoming
 
-# In[2]:
-
-
-from ipynb.fs.full.scrape_xscores_completed_function import scrape_xscores_completed
-from ipynb.fs.full.scrape_xscores_upcoming_function import scrape_xscores_upcoming_fixtures
+from YourInfo import folder_loc
 
 
 # ---
-
 # ### This script is designed to scrape xscores.com for results from the current soccer season in Europe's top leagues, and compile with results from past season, then export the data to an excel file.
-
-# In[ ]:
-
-
-#path to Date-Pipeline-To-Tableau folder, to be used throughout script
-folder_loc = '/Users/willfitzhugh/Desktop/Coding/Tableau Game Preview/'
-
+# ---
 
 # In[3]:
 
@@ -62,7 +53,7 @@ data = pd.DataFrame(columns=['Round', 'Date', 'Time', 'Home_Team', 'Home_Score',
 for i in range(len(leagues_cups)):
     
     completed = scrape_xscores_completed(year, leagues_cups.iloc[i,0], leagues_cups.iloc[i,1])
-    upcoming = scrape_xscores_upcoming_fixtures(leagues_cups.iloc[i,0], leagues_cups.iloc[i,1])
+    upcoming = scrape_xscores_upcoming(leagues_cups.iloc[i,0], leagues_cups.iloc[i,1])
     
     current_season = pd.concat( [completed, upcoming] )
     current_season['season'] = year
