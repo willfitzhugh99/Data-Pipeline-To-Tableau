@@ -17,6 +17,18 @@ These scripts are designed to allow anyone to clone this repository and maintain
 
 ---
 #### Necessary Alterations:
-To successfully run this program on your computer, you just have to open each of the .ipynb files and enter the path to the clone of this repository and the path to your chromedriver (you also need a chromedriver). 
+To successfully run this program on your computer, you first have to open the file 'YourInfo.py' in the Notebooks folder. In it, enter the path to the clone of this repository and the path to your chromedriver (you also need a chromedriver); this allows the script 'Update Current Season Data' to find necessary files.
 
-See requirements.txt for package versions
+Chromedriver must be installed and compatable with current version of Chrome.
+
+See requirements.txt for package versions.
+
+To set up crontab automation, see this link:
+
+https://www.jcchouinard.com/python-automation-with-cron-on-mac/
+
+To set up export to Google Sheets, see these two links:
+
+https://www.plus2net.com/python/pygsheets.php
+
+https://pygsheets.readthedocs.io/en/stable/
