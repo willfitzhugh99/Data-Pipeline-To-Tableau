@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[24]:
 
 
 from selenium import webdriver
@@ -22,24 +22,29 @@ from YourInfo import folder_loc
 # ### This script is designed to scrape xscores.com for results from the current soccer season in Europe's top leagues, and compile with results from past season, then export the data to an excel file.
 # ---
 
-# In[3]:
+# In[25]:
 
 
 #Leagues and countries of interest:
 
 league_names = pd.DataFrame({
     'country':['spain', 'england','germany','france','italy'],
-    'league_name':['primera-division','premier-league','bundesliga','ligue-1','serie-a']
+    'league_name_completed':['primera-division','premier-league','bundesliga','ligue-1','serie-a'],
+    'league_name_upcoming':['primera-division','premier-league','bundesliga','ligue-1','serie-a']
 })
 cup_names = pd.DataFrame({
     'country':['europe-uefa','europe-uefa','spain','england','germany','france', 'italy'],
-    'league_name':['uefa-champions-league','uefa-europa-league','fa-cup','fa-cup','fa-cup','fa-cup','fa-cup']
+    'league_name_completed':['uefa-champions-league/group-stage','uefa-europa-league/group-stage','fa-cup','fa-cup',
+                             'fa-cup','fa-cup','fa-cup'],
+    'league_name_upcoming':['uefa-champions-league','uefa-europa-league','fa-cup','fa-cup','fa-cup','fa-cup','fa-cup']
 })
 leagues_cups = pd.concat([league_names,cup_names])
 leagues_cups
 
 
-# In[6]:
+# - needed to add seperate league_name column because url for scraping completed uefa-league games has changed.
+
+# In[31]:
 
 
 #scrape completed and upcoming games for each league, compile into current season data
@@ -53,17 +58,17 @@ data = pd.DataFrame(columns=['Round', 'Date', 'Time', 'Home_Team', 'Home_Score',
 for i in range(len(leagues_cups)):
     
     completed = scrape_xscores_completed(year, leagues_cups.iloc[i,0], leagues_cups.iloc[i,1])
-    upcoming = scrape_xscores_upcoming(leagues_cups.iloc[i,0], leagues_cups.iloc[i,1])
+    upcoming = scrape_xscores_upcoming(leagues_cups.iloc[i,0], leagues_cups.iloc[i,2])
     
     current_season = pd.concat( [completed, upcoming] )
     current_season['season'] = year
     current_season['Country'] = leagues_cups.iloc[i,0]       #add country and competition indicator columns
-    current_season['Competition'] = leagues_cups.iloc[i,1]
+    current_season['Competition'] = leagues_cups.iloc[i,2]
     
     data = pd.concat([data, current_season])
 
 
-# In[7]:
+# In[32]:
 
 
 #Compile current season data with data from past 20 years, and transform to work with in Tableau.
@@ -97,7 +102,7 @@ full_dataset = pd.concat([home, away])
 full_dataset.to_csv( folder_loc+'Data/Full_Dataset.csv',index=False)
 
 
-# In[8]:
+# In[33]:
 
 
 #export updated data to google sheets via pygsheets
