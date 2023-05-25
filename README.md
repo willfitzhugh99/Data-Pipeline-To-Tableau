@@ -1,7 +1,8 @@
 # Data-Pipeline-To-Tableau
 Soccer data scraped using selenium, processed in python and presented in Tableau.
 
-This project presents a match up preview for upcoming soccer games in a Tableau dashboard. Link to the Tableau dashboard: https://public.tableau.com/app/profile/william.fitzhugh/viz/EuropeanSoccerMatchPreview/Dashboard5
+This project presents a match up preview for upcoming soccer games in a Tableau dashboard. Link to the Tableau dashboard: 
+https://public.tableau.com/shared/Q2C2RGXTP?:display_count=n&:origin=viz_share_link
 (note: Tableau Public no longer supports automated data updates from Google Sheets, so the publicly available version of this dashboard is likely out of date)
 
 The data is scraped from xscores.com using selenium in python, processed in python using pandas, and set to automatically update and export to Tableau. 
