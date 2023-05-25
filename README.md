@@ -34,3 +34,13 @@ To set up export to Google Sheets, see these two links:
 https://www.plus2net.com/python/pygsheets.php
 
 https://pygsheets.readthedocs.io/en/stable/
+
+
+---
+#### A Screenshot Preview of the Dashboard:
+
+<img width="998" alt="Screen Shot Preview" src="https://github.com/willfitzhugh99/Data-Pipeline-To-Tableau/assets/103475799/af73db7c-54a0-4ac6-801a-b557f670267c">
+
+
+
+
